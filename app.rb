@@ -2,6 +2,9 @@ class RedmartSinatra < Sinatra::Base
   get '/' do
     erb 'Hello World'
   end
+  get '/about' do
+    erb 'About us'
+  end
   get '/tables/:id' do
     if(params[:id] == 'users')
       @headers = User.column_names

@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   database: redmart
 
-development:
+production:
   adapter: postgresql
   database: dc5v8orf3p58bs
   username: krdkgmnhbvznyv

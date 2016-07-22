@@ -1,5 +1,5 @@
 require './models/user'
-require 'Faker'
+require 'faker'
 
 (0..5).each do |x|
   # @new_user = User.new

@@ -15,6 +15,8 @@ GEM
     arel (7.1.0)
     bond (0.5.1)
     concurrent-ruby (1.0.2)
+    faker (1.6.5)
+      i18n (~> 0.5)
     ffi (1.9.14)
     i18n (0.7.0)
     listen (3.1.5)
@@ -65,6 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  faker (~> 1.6, >= 1.6.3)
   pg
   rake
   rerun

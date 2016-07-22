@@ -5,26 +5,24 @@ class RedmartSinatra < Sinatra::Base
   get '/about' do
     erb 'About us'
   end
-  get '/tables/:id' do
-    if(params[:id] == 'users')
-      @headers = User.column_names
-      @items = User.all
-    elsif (params[:id] == 'products')
-      @headers = Product.column_names
-      @items = Product.all
-    elsif(params[:id] == 'orders')
-      @headers = Order.column_names
-      @items = Order.all
-    elsif(params[:id] == 'purchases')
-      @headers = Purchase.column_names
-      @items = Purchase.all
-    elsif(params[:id] == 'categories')
-      @headers = Category.column_names
-      @items = Category.all
-    elsif(params[:id] == 'brands')
-      @headers = Brand.column_names
-      @items = Brand.all
-    end
-    erb :'tableView'
+  #Get all users
+  get '/users' do
+    @headers = User.column_names
+    @items = User.all
+
+    erb :'user/index'
   end
+  #Get for new user
+  # get 'users/new' do
+  #   @
+  # end
+
+  #Get specific user
+  get '/users/:id' do
+    @user = User.find(params[:id])
+    @headers = User.column_names
+    erb :'user/show'
+  end
+
+
 end

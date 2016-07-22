@@ -1,0 +1,6 @@
+<h4>
+  <!-- This user's name is <%= @user[:name]%> -->
+  <%@headers.each {|header|%>
+    <%=header%>: <%=@user[header]%><br>
+  <%}%>
+</h4>

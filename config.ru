@@ -13,4 +13,6 @@ require './models/brand'
 #for controller
 require './app'
 
+#allow delete and put request
+use Rack::MethodOverride
 run RedmartSinatra

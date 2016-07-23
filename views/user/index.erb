@@ -12,6 +12,14 @@
           <%@headers.each {|header|%>
             <td><%=item[header]%></td>
           <%}%>
+          <td>
+            <a href="/users/<%=item[:id]%>">Show</a> |
+            <a href="/users/<%=item[:id]%>/edit">Edit</a>
+            <form class="" action="/users/<%=item[:id]%>" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+          </td>
         </tr>
       <%}%>
     </tbody>

@@ -6,7 +6,13 @@ h1 {
   font-size: 2em;
 }
 th{
-  font-weight: bolder;
+  font-size: 1em;
+}
+tr > th, tr > td {
+  text-align: center;
+}
+form{
+  display:inline-block;
 }
 .navbar-default .navbar-nav > li > a {
   font-size: 1em;
@@ -14,4 +20,14 @@ th{
 }
 .navbar{
   background: #ee4054;
+}
+.input_form{
+  /*text-align: center;*/
+  padding-left: 50px;
+}
+.notice {
+  text-align: center;
+}
+.account_details {
+  text-align: left;
 }

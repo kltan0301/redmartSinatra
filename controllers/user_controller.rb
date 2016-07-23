@@ -4,13 +4,6 @@ require 'sinatra/flash'
 class RedmartSinatra < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
-
-  get '/' do
-    erb 'Hello World'
-  end
-  get '/about' do
-    erb 'About us'
-  end
   #Get all users
   get '/users' do
     @headers = User.column_names

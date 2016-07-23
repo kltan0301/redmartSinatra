@@ -10,8 +10,9 @@ require './models/purchase'
 require './models/category'
 require './models/brand'
 
-#for controller
+#for controllers
 require './app'
+require './controllers/user_controller'
 
 #allow delete and put request
 use Rack::MethodOverride

@@ -1,6 +1,36 @@
-<h4>
-  <!-- This user's name is <%= @user[:name]%> -->
-  <%@headers.each {|header|%>
-    <%=header%>: <%=@user[header]%><br>
-  <%}%>
+<h2 class="account_details input_form">Account Information</h2>
 </h4>
+<form class="input_form">
+   <fieldset disabled>
+<div class="form-group row">
+    <label class="col-xs-4">Username:</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" name="user[name]" value="<%=@user[:name]%>">
+      </div>
+</div>
+<div class="form-group row">
+    <label class="col-xs-4">Password:</label>
+      <div class="col-xs-10">
+        <input type="password" class="form-control" name="user[password]" value="<%=@user[:password]%>">
+      </div>
+</div>
+<div class="form-group row">
+  <label class="col-xs-2">Email:</label>
+    <div class="col-xs-12">
+      <input type="email" class="form-control" name="user[email]" value="<%=@user[:email]%>">
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-xs-2">Address:</label>
+    <div class="col-xs-12">
+      <input type="text" class="form-control col-xs-5" name="user[address]" value="<%=@user[:address]%>" >
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-xs-6">Credit card no.:</label>
+      <div class="col-xs-12">
+        <input type="text" class="form-control col-xs-2" name="user[cc_number]" value="<%=@user[:cc_number]%>">
+      </div>
+</div>
+</fieldset>
+</form>

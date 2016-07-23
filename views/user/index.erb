@@ -1,26 +1,36 @@
-<table class='table table-striped' >
-  <thead>
-      <tr>
-        <%@headers.each {|header|%>
-          <th><%=header%></th>
-        <%}%>
-      </tr>
-    </thead>
-    <tbody>
-      <%@items.each {|item|%>
+<%@headers.select!{|header| header != 'created_at' && header != 'updated_at' && header != 'id'}%>
+<h4 class="notice"><%= flash[:notice] %></h4>
+
+<table class='table table-striped'>
+    <thead>
         <tr>
-          <%@headers.each {|header|%>
-            <td><%=item[header]%></td>
-          <%}%>
-          <td>
-            <a href="/users/<%=item[:id]%>">Show</a> |
-            <a href="/users/<%=item[:id]%>/edit">Edit</a>
-            <form class="" action="/users/<%=item[:id]%>" method="post">
-              <input type="hidden" name="_method" value="delete">
-              <input type="submit" value="Delete" class="btn btn-danger">
-            </form>
-          </td>
-        </tr>
-      <%}%>
-    </tbody>
+            <%@headers.each {|header|%>
+              <th><%=header.upcase%></th>
+            <%}%>
+            <th>Actions</th>
+      </tr>
+</thead>
+<tbody>
+    <%@items.each {|item|%>
+    <tr>
+        <%@headers.each {|header|%>
+        <td><%=item[header]%></td>
+    <%}%>
+    <td>
+      <a href="/users/<%=item[:id]%>" class="btn btn-info" role="button">
+         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </a>
+      <a href="/users/<%=item[:id]%>/edit" class="btn btn-primary" role="button">
+         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+      </a>
+      <form class="del_button" action="/users/<%=item[:id]%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="btn btn-danger" name="button">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </button>
+      </form>
+    </td>
+</tr>
+<%}%>
+</tbody>
 </table>

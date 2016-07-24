@@ -1,11 +1,17 @@
-<h2 class="input_form">Edit product <%=@product[:name]%></h2>
+<h2 class="input_form">Edit product</h2>
 
 <form class="input_form" action="/products/<%= @product[:id] %>" method="post">
   <input type="hidden" name="_method" value="put">
   <div class="form-group row">
-      <label class="col-xs-4">Product name:</label>
+      <label class="col-xs-6">Product name:</label>
       <div class="col-xs-12">
           <input type="text" class="form-control" name="product[name]" value="<%=@product[:name]%>">
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-xs-4">Image Url:</label>
+      <div class="col-xs-12">
+          <input type="text" class="form-control" name="product[image_url]" value="<%=@product[:image_url]%>" required>
       </div>
   </div>
   <div class="form-group row">

@@ -4,7 +4,7 @@ require 'sinatra/flash'
 class RedmartSinatra < Sinatra::Base
 
   get '/' do
-    erb 'Welcome to Redmart Sinatra'
+    erb :home
   end
   get '/about' do
     erb 'About us'

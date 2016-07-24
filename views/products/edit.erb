@@ -1,0 +1,49 @@
+<h2 class="input_form">Edit product <%=@product[:name]%></h2>
+
+<form class="input_form" action="/products/<%= @product[:id] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div class="form-group row">
+      <label class="col-xs-4">Product name:</label>
+      <div class="col-xs-12">
+          <input type="text" class="form-control" name="product[name]" value="<%=@product[:name]%>">
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-xs-12">Price:</label>
+      <div class="col-xs-6">
+          <input type="text" class="form-control" name="product[price]" value="<%=@product[:price]%>">
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-xs-11">Brand id:</label>
+      <div class="col-xs-4">
+          <select class="form-control" name="product[brands_id]">
+              <%(1..@brands_count).each{|val|
+                if val == @product[:brands_id] then
+                %>
+                  <option value="<%=val%>" selected><%=val%></option>
+                <%else%>
+                  <option value="<%=val%>"><%=val%></option>
+                <%end%>
+              <%}%>
+          </select>
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-xs-11">Category id:</label>
+      <div class="col-xs-4">
+          <select class="form-control" name="product[categories_id]">
+              <%(1..@categories_count).each{|val|
+                if val == @product[:categories_id] then
+                %>
+                  <option value="<%=val%>" selected><%=val%></option>
+                <%else%>
+                  <option value="<%=val%>"><%=val%></option>
+                <%end%>
+              <%}%>
+          </select>
+      </div>
+  </div>
+  <input class="btn btn-success" type="submit" name="name" value="Submit">
+
+</form>

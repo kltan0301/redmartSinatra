@@ -7,27 +7,29 @@ class RedmartSinatra < Sinatra::Base
   #Get all users
   get '/users' do
     @headers = User.column_names
-    @items = User.all
+    @users = User.all
 
-    erb :'user/index'
+    erb :'users/index'
   end
-
+  #Direct to add new user screen
   get '/users/new' do
-    erb :'user/new'
+    erb :'users/new'
   end
 
   #Get specific user
   get '/users/:id' do
     @user = User.find(params[:id])
     @headers = User.column_names
-    erb :'user/show'
+    erb :'users/show'
   end
 
+  #Direct to edit screen
   get '/users/:id/edit' do
     @user = User.find(params[:id])
-    erb :'user/edit'
+    erb :'users/edit'
   end
 
+  #Method to create a new user
   post '/users' do
     puts params
     puts params[:user]
@@ -42,7 +44,7 @@ class RedmartSinatra < Sinatra::Base
       flash[:notice] = "User creation failed"
     end
   end
-
+  #Method to remove an existing user
   delete '/users/:id' do
 
     @deleted_user = User.find(params[:id])
@@ -54,7 +56,7 @@ class RedmartSinatra < Sinatra::Base
       erb :"users"
     end
   end
-
+  #Method to update an existing user
   put '/users/:id' do
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])

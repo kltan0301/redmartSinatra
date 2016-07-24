@@ -31,3 +31,19 @@ form{
 .account_details {
   text-align: left;
 }
+.product_disp {
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px;
+  width: 200px;
+  height: 300px;
+}
+.product_info {
+  margin: 10px 10px;
+}
+.product_section {
+  text-align: center;
+}
+.product_disp:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}

@@ -11,19 +11,19 @@
       </tr>
 </thead>
 <tbody>
-    <%@items.each {|item|%>
+    <%@users.each {|user|%>
     <tr>
         <%@headers.each {|header|%>
-        <td><%=item[header]%></td>
+        <td><%=user[header]%></td>
     <%}%>
     <td>
-      <a href="/users/<%=item[:id]%>" class="btn btn-info" role="button">
+      <a href="/users/<%=user[:id]%>" class="btn btn-info" role="button">
          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </a>
-      <a href="/users/<%=item[:id]%>/edit" class="btn btn-primary" role="button">
+      <a href="/users/<%=user[:id]%>/edit" class="btn btn-primary" role="button">
          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
       </a>
-      <form class="del_button" action="/users/<%=item[:id]%>" method="post">
+      <form class="del_button" action="/users/<%=user[:id]%>" method="post">
           <input type="hidden" name="_method" value="delete">
           <button type="submit" class="btn btn-danger" name="button">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

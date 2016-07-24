@@ -1,0 +1,43 @@
+<h3 class="input_form">Add new product</h3>
+<form class="input_form" action="/products" method="post">
+    <div class="form-group row">
+        <label class="col-xs-4">Name:</label>
+        <div class="col-xs-12">
+            <input type="text" class="form-control" name="product[name]" placeholder="Product Name" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-4">Image Url:</label>
+        <div class="col-xs-12">
+            <input type="text" class="form-control" name="product[image_url]" placeholder="https://placehold.it/150x150.jpg" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-12">Price:</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="product[price]">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-11">Brand id:</label>
+        <div class="col-xs-4">
+            <select class="form-control" name="product[brands_id]">
+                <%(1..@brands_count).each{|val|%>
+                <option value="<%=val%>"><%=val%></option>
+                <%}%>
+            </select>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-xs-11">Category id:</label>
+    <div class="col-xs-4">
+        <select class="form-control" name="product[categories_id]">
+            <%(1..@categories_count).each{|val|%>
+            <option value="<%=val%>"><%=val%></option>
+        <%}%>
+    </select>
+</div>
+</div>
+<input class="btn btn-success" type="submit" name="name" value="Add Product">
+
+</form>

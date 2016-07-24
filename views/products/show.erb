@@ -1,0 +1,30 @@
+<h2 class="account_details input_form">Product Information</h2>
+</h4>
+<form class="input_form">
+<fieldset disabled>
+    <div class="form-group row">
+        <label class="col-xs-6">Product name:</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" value="<%=@product[:name]%>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-4">Price:</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" value="$<%=@product[:price]%>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-6">Brand id:</label>
+        <div class="col-xs-8">
+            <input type="text" class="form-control" value="<%=@product[:brands_id]%>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-xs-6">Category id:</label>
+        <div class="col-xs-8">
+            <input type="text" class="form-control col-xs-5" value="<%=@product[:categories_id]%>">
+        </div>
+    </div>
+</fieldset>
+</form>

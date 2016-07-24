@@ -13,6 +13,7 @@ require './models/brand'
 #for controllers
 require './app'
 require './controllers/user_controller'
+require './controllers/product_controller'
 
 #allow delete and put request
 use Rack::MethodOverride
